@@ -1,4 +1,4 @@
-import altair as alt
+'''import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -37,4 +37,34 @@ st.altair_chart(alt.Chart(df, height=700, width=700)
         y=alt.Y("y", axis=None),
         color=alt.Color("idx", legend=None, scale=alt.Scale()),
         size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
-    ))
+    ))'''
+
+import streamlit as st
+
+
+st.write("""Find the greatest among the three Numbers""")
+
+#Get Input
+
+st.header('User Input Parameters')
+
+#cnt_children = st.number_input("CNT_CHILDREN",min_value=0,max_value=20,step=1)
+#amt_income_total = st.number_input("AMT_INCOME_TOTAL",min_value=0.0,max_value=2000000.0)
+#days_birth = st.number_input("DAYS_BIRTH",min_value=-30000,max_value=0,step=1)
+
+num1 = st.number_input("Enter 1st Number",min_value=0.0,max_value=100000000.0)
+num2 = st.number_input("Enter 2nd Number",min_value=0.0,max_value=100000000.0)
+num3 = st.number_input("Enter 3rd Number",min_value=0.0,max_value=100000000.0)
+
+st.subheader('Finding the greatest among the inputs provided above')
+
+if num1>num2:
+    if num1>num3:
+        st.write('Greatest Number is:',num1)
+    else:
+        st.write('Greatest Number is:',num3)
+else:
+    if num2>num3:
+        st.write('Greatest Number is:',num2)
+    else:
+        st.write('Greatest Number is:',num3)
